@@ -18,7 +18,6 @@ func TestNewBrain(t *testing.T) {
 }
 
 func TestXor(t *testing.T) {
-	// create the XOR representation patter to train the network
 	patterns := [][][]float64{
 		{{0, 0}, {0}},
 		{{0, 1}, {1}},
@@ -26,9 +25,9 @@ func TestXor(t *testing.T) {
 		{{1, 1}, {0}},
 	}
 
-	gobrain := New(2, 2, 1)
+	gobrain := New(2, 3, 1)
 
-	gobrain.Train(patterns, 1000, 0.6, 0.4, false)
+	gobrain.Train(patterns, 100000, 0.2, 0.1)
 
 	for _, p := range patterns {
 		result := gobrain.Process(p[0])

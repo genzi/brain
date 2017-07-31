@@ -124,7 +124,7 @@ func (self *Brain) BackPropagate(targets []float64, lRate, mFactor float64) {
 	}
 }
 
-func (self *Brain) Train(patterns [][][]float64, iterations int, lRate, mFactor float64, debug bool) {
+func (self *Brain) Train(patterns [][][]float64, iterations int, lRate, mFactor float64) {
 	for i := 0; i < iterations; i++ {
 		for _, p := range patterns {
 			self.Process(p[0])
